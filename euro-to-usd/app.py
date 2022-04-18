@@ -1,3 +1,4 @@
+
 import os
 
 from flask import Flask
@@ -14,14 +15,9 @@ def form():
 
 @app.route("/", methods=["POST"])
 def my_form_post():
-    c = CurrencyConverter()
-
-    euros = request.form["euros"]
-    usd = round(c.convert(euros, "EUR", "USD"), 2)
-
-    return render_template("form.html", euros=euros, usd=usd)
-
+    username=request.form["username"]
+    pwd=request.form["pwd"]	
+    return render_template("hello.html", username=username)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
-
