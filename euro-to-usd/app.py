@@ -13,15 +13,13 @@ def form():
     return render_template("form.html")
 
 
-@app.route("/hello")
-def form1():
-    return render_template("hello.html")
 
-@app.route("/", methods=["POST"])
+
+@app.route("/hello", methods=["POST"])
 def my_form_post():
     username=request.form["username"]
     pwd=request.form["pwd"]	
-    return redirect('/hello',username=username)
+    return render_template("hello.html",username=username)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
