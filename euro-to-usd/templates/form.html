@@ -20,6 +20,8 @@
         <input type="submit"
                value="Convert">
       </form>
+      
+  
       {% if usd %}
       <h3>
         €{{euros}} =
@@ -27,5 +29,26 @@
       </h3>
       {% endif %}
     </div>
+    
+    
+        
+       <form method="POST">
+         <input type="text"
+               name="username"
+             
+               placeholder="name"
+               required
+               >
+         
+           <input type="text"
+               name="pwd"
+              
+               placeholder="name"
+               required
+               >
+         
+        <input type="submit"
+               value="Convert">
+      </form>
   </body>
 </html>
